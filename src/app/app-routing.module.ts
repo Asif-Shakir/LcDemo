@@ -5,7 +5,7 @@ import { RootLayoutComponent } from './shared/layout/root-layout/root-layout.com
 
 const routes: Routes = [
   {
-    path: 'personal',
+    path: '/personal',
     component: RootLayoutComponent,
     loadChildren: () => import('./personal/personal.module').then(mod => mod.PersonalModule),
   },
