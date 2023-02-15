@@ -21,10 +21,9 @@ export class LoginComponent implements OnInit {
     })
   }
   handleSubmit(){
+    this._httpService.NavigateToRoute('/personal/mycards');
     this._httpService.post('account/login',this.loginForm.value).subscribe(x=>{
-      console.log(x);
     })
-    console.log(this.loginForm.value);
   }
   get f(){
     return this.loginForm.controls;

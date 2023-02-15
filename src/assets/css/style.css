@@ -106,6 +106,10 @@ hr{
   border: 1px solid #eaeaea;
   padding: 15px 20px;
 }
+.filters{
+  display: grid;
+  grid-template-columns: repeat(5 ,1fr) 120px;
+}
 .input-label{
   color:#86889A;
   font-size: 12px;
