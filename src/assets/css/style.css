@@ -49,6 +49,10 @@ a{
   font-size: 14px;
   font-weight: 600;
   color: #000;
+  padding-bottom: 21px;
+}
+.header .left-side ul li:hover a {
+  border-bottom: 2px solid #000;
 }
 .side-bar{
   width: 240px;
@@ -64,7 +68,7 @@ a{
   color: var(--primary);
   margin-bottom: 29px;
 }
-.side-bar ul >div {
+.side-bar ul > .menu-section  div {
   display: flex;
   gap:29px;
   flex-direction: column;
@@ -152,10 +156,27 @@ table{
   font-weight: 600;
   font-size: 12px;
   color: #000;
-  border-color: transparent !important;
+  border: 1px solid #eaeaea;
 }
 thead{
-  background: #E1E7EA;
+  background: #fff;
+}
+table tbody tr{
+  /* border: none; */
+  border-color:transparent;
+}
+table tbody tr:last-child{
+  border-color:inherit;
+}
+thead tr th i{
+  line-height: .5 !important;
+  font-size: 20px !important;
+  color: #BCC5CA;
+  cursor: pointer;
+}
+
+thead tr th i:hover{
+  color: var(--primary);
 }
 span.tag{
   border-radius: 3px;
@@ -171,4 +192,75 @@ table tbody tr:nth-child(odd){
 }
 table tbody tr:nth-child(even){
   background-color: transparent;
+}
+.auth h2{
+  font-size: 35px;
+  color: #172327;
+  font-weight: 700;
+  text-align: center;
+}
+.auth p{
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  color: #6F767E;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+.auth input ,.auth label{
+  font-size: 14px;
+}
+.auth input,.auth button{
+  height:50px;
+}
+.auth button{
+  font-size: 16px;
+}
+.auth input{
+  /* background: #E9F3FF; */
+}
+.auth .input-with-icon .icon{
+  /* background: #E9F3FF; */
+}
+.auth .social-login button{
+display: flex;
+align-items: center;
+padding: 15px 25px;
+background: #FCFCFC;
+border: 1px solid #E5EAEF;
+border-radius: 6px;
+font-size: 14px;
+font-weight: 600;
+color: #172327;
+gap: 10px;
+}
+.tol{
+    margin: 24px 0px 34px 0px;
+}
+.tol h6{
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #E5EAEF;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+}
+.tol h6 span {
+   color:#6F767E;
+   padding:0 10px;
+   background: #fff;
+}
+.auth-action{
+font-weight: 600;
+font-size: 14px;
+color:var(--primary);
+margin-top: 15px;
+}
+.auth-action:hover{
+  color:var(--primary);
+}
+.input-error{
+  font-weight: 600;
+  color: var(--danger);
+  font-size: 12px;
 }

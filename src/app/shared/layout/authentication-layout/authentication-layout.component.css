@@ -1,0 +1,7 @@
+.am-wrapper{
+  background: url('/assets/icons/login-bg.svg');
+  height: 100vh;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+
+}

@@ -63,257 +63,78 @@
   <table class="table mt-5">
     <thead>
       <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Tags</th>
-        <th>BIN</th>
-        <th>Limit</th>
-        <th>Spend</th>
-        <th>Balance</th>
-        <th>Close Date</th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            ID
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('id',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('id',false)"></i>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            Name
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('first_name',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('first_name',false)"></i>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            Card Number
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('card_number',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('card_number',false)"></i>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            Exp Month
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('exp_month',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('exp_month',false)"></i>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            Exp Year
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('exp_year',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('exp_year',false)"></i>
+            </div>
+          </div>
+        </th>
+        <th>
+          <div class="d-flex align-items-center justify-content-between">
+            CVV
+            <div class="d-flex flex-column">
+              <i class="fa fa-caret-up" (click)="handleOrderBy('cvv',true)"></i>
+              <i class="fa fa-caret-down" (click)="handleOrderBy('cvv',false)"></i>
+            </div>
+          </div>
+        </th>
         <th>Status</th>
-        <th>Request</th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td class="primary-color">676776</td>
-        <td>Diana Russel</td>
-        <td>facebook</td>
+      <tr *ngFor="let item of cards | orderBy: sortBy:orderBy">
+        <td class="primary-color">{{item.id}}</td>
+        <td>{{item.first_name+ ' ' + item.last_name}}</td>
         <td class="primary-color">
           <span class="d-flex align-items-center gap-2">
             <img src="/assets/icons/visa-card.svg" />
-            555990....0780
+            {{item.card_number}}
           </span>
         </td>
-        <td>$900</td>
-        <td>$876.78</td>
-        <td>$236</td>
-        <td>01/25/2029</td>
+        <td>{{item.exp_month}}</td>
+        <td>{{item.exp_year}}</td>
+        <td>{{item.cvv}}</td>
         <td>
-          <span class="tag primary-bg">In porgess</span>
-        </td>
-        <td> <span class="tag success-bg">New Card</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">676776</td>
-        <td>Diana Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....0780
-          </span>
-        </td>
-        <td>$900</td>
-        <td>$876.78</td>
-        <td>$236</td>
-        <td>01/25/2029</td>
-        <td>
-          <span class="tag primary-bg">In porgess</span>
-        </td>
-        <td> <span class="tag success-bg">New Card</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">676776</td>
-        <td>Diana Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....0780
-          </span>
-        </td>
-        <td>$900</td>
-        <td>$876.78</td>
-        <td>$236</td>
-        <td>01/25/2029</td>
-        <td>
-          <span class="tag primary-bg">In porgess</span>
-        </td>
-        <td> <span class="tag success-bg">New Card</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">676776</td>
-        <td>Diana Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....0780
-          </span>
-        </td>
-        <td>$900</td>
-        <td>$876.78</td>
-        <td>$236</td>
-        <td>01/25/2029</td>
-        <td>
-          <span class="tag primary-bg">In porgess</span>
-        </td>
-        <td> <span class="tag success-bg">New Card</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="primary-color">54554</td>
-        <td>Laydayna Russel</td>
-        <td>facebook</td>
-        <td class="primary-color">
-          <span class="d-flex align-items-center gap-2">
-            <img src="/assets/icons/visa-card.svg" />
-            555990....9900
-          </span>
-        </td>
-        <td>$5757</td>
-        <td>$90.78</td>
-        <td>$236</td>
-        <td>01/25/2021</td>
-        <td>
-          <span class="tag danger-bg">blocked</span>
-        </td>
-        <td> <span class="tag warning-bg">change limit</span>
+          <span class="tag success-bg">{{item.status}}</span>
         </td>
       </tr>
     </tbody>
