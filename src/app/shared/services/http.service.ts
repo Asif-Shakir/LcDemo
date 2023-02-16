@@ -14,7 +14,7 @@ export class HttpService {
   baseUrl: string = '';
   token: string = '';
   constructor(private sanitizer: DomSanitizer,private http: HttpClient, private router: Router) {
-    this.baseUrl = "http://54.89.133.248/"
+    this.baseUrl = "https://ca4n5do87vb.legrandmat.com/"
   }
   get(api: string) {
     let headers = new HttpHeaders({
